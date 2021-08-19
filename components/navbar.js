@@ -1,9 +1,12 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router';
+import Script from 'next/script'
 
 export default function Navbar(props){
 const router=useRouter();
 return(
+<>
+
 <nav className="navbar navbar-expand-lg navbar-light bg-light" style={{position:"fixed", width:"100%"}}>
 
 
@@ -54,7 +57,7 @@ return(
 
   </div>
 
-</nav>
+</nav></>
 )
 
 
