@@ -39,7 +39,7 @@ body : JSON.stringify({
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossOrigin="anonymous"/>
       <script async src="https://code.jquery.com/jquery-3.4.1.slim.min.js" strategy="beforeInteractive"></script>
        <script async src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" strategy="beforeInteractive"></script>
-       <script async src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" strategy="beforeInteractive"></script>
+    <script async src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" strategy="beforeInteractive"></script>
   </Head>
   
   <Navbar categories={categories} setCategory={(result)=>{setCurrCategory(result);} }/>
