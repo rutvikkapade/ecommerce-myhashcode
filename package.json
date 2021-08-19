@@ -12,6 +12,7 @@
     "bootstrap": "^5.1.0",
     "jquery": "^3.6.0",
     "next": "11.1.0",
+    "nextjs": "0.0.3",
     "popper.js": "^1.16.1",
     "random-hash": "^4.0.1",
     "react": "17.0.2",
