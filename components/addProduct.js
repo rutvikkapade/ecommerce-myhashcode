@@ -30,26 +30,26 @@ method : 'post',
     })
 })
 }} >
-<div className="form-group">
+<div className="form-group"  >
     <label htmlFor="product-name">Product Name : </label>
-    <input type="text" className="form-control" id="product-name" onChange={(event)=>{setProductName(event.target.value)} } aria-describedby="productHelp" placeholder="Enter Product Name"/>
+    <input type="text" className="form-control" id="product-name" required onChange={(event)=>{setProductName(event.target.value)} } aria-describedby="productHelp" placeholder="Enter Product Name"/>
     <small id="productHelp" className="form-text text-muted">Remember You can add same products multiple time as a seller,no primary key on product name.</small>
   </div>
 <div className="form-group">
 <label htmlFor="product-price">Product Price :</label>
-<input name="productPrice" className="form-control" id="product-price" placeholder="Enter Product Price" onChange={(event)=>{setProductPrice(event.target.value)} } type="text"/>
+<input name="productPrice"  className="form-control" required id="product-price" placeholder="Enter Product Price" onChange={(event)=>{setProductPrice(event.target.value)} } type="text"/>
 </div>
 <div className="form-group">
 <label htmlFor="product-brand">Brand :</label>
-<input placeholder="Enter Brand Name"  className="form-control" name="productBrand" id="product-brand" onChange={(event)=>{setProductBrand(event.target.value)} } type="text"/>
+<input placeholder="Enter Brand Name" required  className="form-control" name="productBrand" id="product-brand" onChange={(event)=>{setProductBrand(event.target.value)} } type="text"/>
 </div>
 <div className="form-group">
 <label htmlFor="image-url">Image Url : </label>
-<input placeholder="Enter Image URL" className="form-control" name="imageUrl" id="image-url" onChange={(event)=>{setImageUrl(event.target.value)}} type="text"/>
+<input placeholder="Enter Image URL" required className="form-control" name="imageUrl" id="image-url" onChange={(event)=>{setImageUrl(event.target.value)}} type="text"/>
 </div>
 <div className="form-group">
 <label htmlFor="product-category">Category :</label>
-<select className="form-control" id="product-category" name="categories" onChange={
+<select className="form-control" required id="product-category" name="categories" onChange={
 async(event)=>{
 setCurrCategory(event.target.value);
 const result=await fetch('https://ecommerce-myhashcode-server.herokuapp.com/getProductType',{
@@ -72,7 +72,7 @@ setProductTypes(data);
 </div>
 <div className="form-group">
 <label htmlFor="product-type">Product Type :</label>
-<select name="productType" className="form-control" id="product-type" onChange={(event)=>{
+<select required name="productType" className="form-control" id="product-type" onChange={(event)=>{
 setProductType(event.target.value);
 }}>
 <option value={null}  key="899">Select Product Type</option>
