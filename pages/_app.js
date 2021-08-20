@@ -10,6 +10,9 @@ import Spacer from '../components/spacer'
 import Link from 'next/link'
 import router from 'next/router'
 import Script from 'next/script'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import $ from 'jquery';
+import Popper from 'popper.js';
 
 function MyApp({ Component, pageProps }) {
 const[categories,setCategories]=useState([]);
