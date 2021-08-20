@@ -22,7 +22,7 @@ const[cart,setCartProducts]=useState([]);
 const[cartTotal,setCartTotal]=useState(0);
 const[productAdded,setProductAdded]=useState(0);
 
-useEffect(()=>{
+useEffect(async()=>{
 
 const res=await fetch('https://ecommerce-myhashcode-server.herokuapp.com/getCategories').then(res=>res.json()).then((result)=>{setCategories(result);} );
 
