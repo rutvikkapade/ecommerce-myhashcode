@@ -35,23 +35,6 @@ method : 'post',
     })
 }).then((res)=>{if(res.ok){confirm('product successfully added'); document.getElementById('addProductForm').reset()}else{confirm('Please Check your Input')}}).catch(err=>confirm('Server Error'));
 }} >
-<div className="form-group"  >
-    <label htmlFor="product-name">Product Name : </label>
-    <input type="text" className="form-control" id="product-name" required onChange={(event)=>{setProductName(event.target.value)} } aria-describedby="productHelp" placeholder="Enter Product Name"/>
-    <small id="productHelp" className="form-text text-muted">Remember You can add same products multiple time as a seller,no primary key on product name.</small>
-  </div>
-<div className="form-group">
-<label htmlFor="product-price">Product Price :</label>
-<input name="productPrice"  className="form-control" required id="product-price" placeholder="Enter Product Price" onChange={(event)=>{setProductPrice(event.target.value)} } type="text"/>
-</div>
-<div className="form-group">
-<label htmlFor="product-brand">Brand :</label>
-<input placeholder="Enter Brand Name" required  className="form-control" name="productBrand" id="product-brand" onChange={(event)=>{setProductBrand(event.target.value)} } type="text"/>
-</div>
-<div className="form-group">
-<label htmlFor="image-url">Image Url : </label>
-<input placeholder="Enter Image URL" required className="form-control" name="imageUrl" id="image-url" onChange={(event)=>{setImageUrl(event.target.value)}} type="text"/>
-</div>
 <div className="form-group">
 <label htmlFor="product-category">Category :</label>
 <select className="form-control" required id="product-category" name="categories" onChange={
@@ -87,6 +70,23 @@ productTypes.map(key=>
 )
 }
 </select>
+</div>
+<div className="form-group"  >
+    <label htmlFor="product-name">Product Name : </label>
+    <input type="text" className="form-control" id="product-name" required onChange={(event)=>{setProductName(event.target.value)} } aria-describedby="productHelp" placeholder="Enter Product Name"/>
+    <small id="productHelp" className="form-text text-muted">Remember You can add same products multiple time as a seller,no primary key on product name.</small>
+  </div>
+<div className="form-group">
+<label htmlFor="product-price">Product Price :</label>
+<input name="productPrice"  className="form-control" required id="product-price" placeholder="Enter Product Price" onChange={(event)=>{setProductPrice(event.target.value)} } type="text"/>
+</div>
+<div className="form-group">
+<label htmlFor="product-brand">Brand :</label>
+<input placeholder="Enter Brand Name" required  className="form-control" name="productBrand" id="product-brand" onChange={(event)=>{setProductBrand(event.target.value)} } type="text"/>
+</div>
+<div className="form-group">
+<label htmlFor="image-url">Image Url : </label>
+<input placeholder="Enter Image URL" required className="form-control" name="imageUrl" id="image-url" onChange={(event)=>{setImageUrl(event.target.value)}} type="text"/>
 </div>
 <br/>
 <input  className="btn btn-primary" value="Add Product" type="submit"/>
