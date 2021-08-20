@@ -66,7 +66,7 @@ return(<div>
         props.cartProducts.length==0?<CartIsEmpty/>:<Nothing/>
     }
    <div  className="cart-popup">
-    {props.cartProducts.map(key=>cartProduct(key,index++,removeProduct))}
+    {props.cartProducts.map(key=>cartProduct(key,index,removeProduct))}
    
     
    </div>
