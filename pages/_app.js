@@ -21,9 +21,9 @@ const[productAdded,setProductAdded]=useState(0);
 
 useEffect(()=>{
 
-fetch('https://ecommerce-myhashcode-server.herokuapp.com/getCategories').then(res=>res.json()).then((result)=>{setCategories(result);} );
+const res=await fetch('https://ecommerce-myhashcode-server.herokuapp.com/getCategories').then(res=>res.json()).then((result)=>{setCategories(result);} );
 
-fetch('https://ecommerce-myhashcode-server.herokuapp.com/getProducts',{
+const resTwo=await fetch('https://ecommerce-myhashcode-server.herokuapp.com/getProducts',{
 mode : 'cors',
 method : 'post',
 headers  : {
