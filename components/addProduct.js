@@ -15,7 +15,7 @@ return(
 <form id="addProductForm" style={{textAlign:"left"}} onSubmit={async(event)=>{
 event.preventDefault();
 if(isNaN(parseInt(productPrice))){
-  alert('price should be numeric value only');
+  confirm('price should be numeric value only');
   document.getElementById('addProductForm').reset();
   return;
 }
