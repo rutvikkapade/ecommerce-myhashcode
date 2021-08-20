@@ -9,7 +9,7 @@ import '../styles/cartPopUp.css'
 import Spacer from '../components/spacer'
 import Link from 'next/link'
 import router from 'next/router'
-import Script from 'next/Script'
+import Script from 'next/script'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
