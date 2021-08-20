@@ -33,7 +33,7 @@ method : 'post',
     "productType" : productType,
     "imageUrl" : imageUrl,
     })
-}).then((res)=>{if(res.ok){alert('product successfully added'); document.getElementById('addProductForm').reset()}else{alert('Please Check your Input')}}).catch(err=>alert('Server Error'));
+}).then((res)=>{if(res.ok){confirm('product successfully added'); document.getElementById('addProductForm').reset()}else{confirm('Please Check your Input')}}).catch(err=>confirm('Server Error'));
 }} >
 <div className="form-group"  >
     <label htmlFor="product-name">Product Name : </label>
