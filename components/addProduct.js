@@ -12,8 +12,13 @@ const[imageUrl,setImageUrl]=useState('');
 return(
 <center><div className="formHolder" style={{width:"90%",padding:"10px"}}>
 
-<form style={{textAlign:"left"}} onSubmit={async(event)=>{
+<form id="addProductForm" style={{textAlign:"left"}} onSubmit={async(event)=>{
 event.preventDefault();
+if(isNaN(parseInt(productPrice))){
+  alert('price should be numeric value only');
+  document.getElementById('addProductForm').reset();
+  return;
+}
 const resp=await fetch('https://ecommerce-myhashcode-server.herokuapp.com/sendData',{
 method : 'post',
  mode : 'cors',
@@ -28,7 +33,7 @@ method : 'post',
     "productType" : productType,
     "imageUrl" : imageUrl,
     })
-})
+}).then((res)=>{if(res.ok){alert('product successfully added'); document.getElementById('addProductForm').reset()}else{alert('Please Check your Input')}}).catch(err=>alert('Server Error'));
 }} >
 <div className="form-group"  >
     <label htmlFor="product-name">Product Name : </label>
