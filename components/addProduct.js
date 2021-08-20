@@ -1,6 +1,6 @@
 import {useState,useEffect} from 'react';
 
-export default function ProductForm(props){
+export default function ProducthtmlForm(props){
 
 const[currCategory,setCurrCategory]=useState('');
 const[productTypes,setProductTypes]=useState([]);
@@ -10,9 +10,9 @@ const[productBrand,setProductBrand]=useState('');
 const[productType,setProductType]=useState('');
 const[imageUrl,setImageUrl]=useState('');
 return(
-<center><div className="formHolder" style={{width:"90%",padding:"10px"}}>
+<center><div className="htmlFormHolder" style={{width:"90%",padding:"10px"}}>
 
-<form style={{textAlign:"left"}} onSubmit={async(event)=>{
+<htmlForm style={{textAlign:"left"}} onSubmit={async(event)=>{
 event.preventDefault();
 const resp=await fetch('https://ecommerce-myhashcode-server.herokuapp.com/sendData',{
 method : 'post',
@@ -30,26 +30,26 @@ method : 'post',
     })
 })
 }} >
-<div className="form-group">
-    <label for="product-name">Product Name : </label>
-    <input type="text" className="form-control" id="product-name" onChange={(event)=>{setProductName(event.target.value)} } aria-describedby="productHelp" placeholder="Enter Product Name"/>
-    <small id="productHelp" class="form-text text-muted">Remember You can add same products multiple time as a seller,no primary key on product name.</small>
+<div className="htmlForm-group">
+    <label htmlFor="product-name">Product Name : </label>
+    <input type="text" className="htmlForm-control" id="product-name" onChange={(event)=>{setProductName(event.target.value)} } aria-describedby="productHelp" placeholder="Enter Product Name"/>
+    <small id="productHelp" className="htmlForm-text text-muted">Remember You can add same products multiple time as a seller,no primary key on product name.</small>
   </div>
-<div className="form-group">
-<label for="product-price">Product Price :</label>
-<input name="productPrice" className="form-control" id="product-price" placeholder="Enter Product Price" onChange={(event)=>{setProductPrice(event.target.value)} } type="text"/>
+<div className="htmlForm-group">
+<label htmlFor="product-price">Product Price :</label>
+<input name="productPrice" className="htmlForm-control" id="product-price" placeholder="Enter Product Price" onChange={(event)=>{setProductPrice(event.target.value)} } type="text"/>
 </div>
-<div className="form-group">
-<label for="product-brand">Brand :</label>
-<input placeholder="Enter Brand Name"  className="form-control" name="productBrand" id="product-brand" onChange={(event)=>{setProductBrand(event.target.value)} } type="text"/>
+<div className="htmlForm-group">
+<label htmlFor="product-brand">Brand :</label>
+<input placeholder="Enter Brand Name"  className="htmlForm-control" name="productBrand" id="product-brand" onChange={(event)=>{setProductBrand(event.target.value)} } type="text"/>
 </div>
-<div className="form-group">
-<label for="image-url">Image Url : </label>
-<input placeholder="Enter Image URL" className="form-control" name="imageUrl" id="image-url" onChange={(event)=>{setImageUrl(event.target.value)}} type="text"/>
+<div className="htmlForm-group">
+<label htmlFor="image-url">Image Url : </label>
+<input placeholder="Enter Image URL" className="htmlForm-control" name="imageUrl" id="image-url" onChange={(event)=>{setImageUrl(event.target.value)}} type="text"/>
 </div>
-<div className="form-group">
-<label for="product-category">Category :</label>
-<select className="form-control" id="product-category" name="categories" onChange={
+<div className="htmlForm-group">
+<label htmlFor="product-category">Category :</label>
+<select className="htmlForm-control" id="product-category" name="categories" onChange={
 async(event)=>{
 setCurrCategory(event.target.value);
 const result=await fetch('https://ecommerce-myhashcode-server.herokuapp.com/getProductType',{
@@ -70,9 +70,9 @@ setProductTypes(data);
 )}
 </select>
 </div>
-<div className="form-group">
-<label for="product-type">Product Type :</label>
-<select name="productType" className="form-control" id="product-type" onChange={(event)=>{
+<div className="htmlForm-group">
+<label htmlFor="product-type">Product Type :</label>
+<select name="productType" className="htmlForm-control" id="product-type" onChange={(event)=>{
 setProductType(event.target.value);
 }}>
 <option value={null}  key="899">Select Product Type</option>
@@ -85,7 +85,7 @@ productTypes.map(key=>
 </div>
 <br/>
 <input  className="btn btn-primary" value="Add Product" type="submit"/>
-</form>
+</htmlForm>
 
 </div></center>
 )
