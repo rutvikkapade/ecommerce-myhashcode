@@ -1,5 +1,5 @@
 import{useState,useEffect} from 'react';
-import { useRouter } from 'next/router';
+import router, { useRouter } from 'next/router';
 
 
 
@@ -21,7 +21,19 @@ return(
             <h5 key={key.idproducts+500} className="product-price">Rs {key.price}</h5>
             <h6 key={key.idproducts+600} className="product-type">Type : {key.productType}</h6>
             <label key={key.idproducts+700} className="product-rating">Rated {key.rating}</label>
-            <center><button key={key.idproducts+900}  className="buy-now btn btn-warning">Buy Now</button></center>
+            <center><button key={key.idproducts+900}  className="buy-now btn btn-warning" onClick={(event)=>{
+                    var productObj={
+                        product_id : Math.trunc(Math.random()*999),
+                        product_image : key.productImg,
+                        product_name : key.name,
+                        product_brand : key.brand,
+                        product_price : key.price,
+                        product_rating : key.rating,
+                    }
+                  props.addToCart(productObj,parseInt(key.price));
+                  router.push('/cart');
+
+            }}>Buy Now</button></center>
             <center><button key={key.idproducts+1000} className="add-to-cart btn btn-primary" onClick={(event)=>{
                 var productObj={
                     product_id : Math.trunc(Math.random()*999),
