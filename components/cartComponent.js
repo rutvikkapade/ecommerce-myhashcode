@@ -60,6 +60,16 @@ export default function CartComponent(props){
 return(<div>
     <center> <div className="totalMoni">
     <h3>Sum Total Rs : {props.cartTotal}</h3>
+    {(props.cartTotal?
+     <button type="button" className="btn btn-warning" onClick={()=>{
+        alert('the product is delivered ! Thanks for the purchase!');
+        props.setCart([],0);
+    }}>Make Payment</button>:<></>
+    
+    )}
+
+    
+   
     </div></center>
     {
         props.cartProducts.length==0?<CartIsEmpty/>:<Nothing/>

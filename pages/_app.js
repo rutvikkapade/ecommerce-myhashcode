@@ -58,7 +58,7 @@ body : JSON.stringify({
  </Link>
   <div className="cart-notification" style={ cart.length==0?{backgroundColor : "transparent"} : {backgroundColor: "red" }   } ></div>
   </div>
-  <Component {...pageProps} setCategory={(result)=>{setCurrCategory(result);}} products={products}  addToCart={(result,price)=>{setCartProducts(old=>[...old,result]); setCartTotal(cartTotal+price)}}   updateCart={(id,price)=>{ console.log(id); cart.splice(id,1); setCartTotal(cartTotal-price); router.push('/cart')  }} cartProducts={cart} cartTotal={cartTotal} /> 
+  <Component {...pageProps} setCartProducts={(result,total)=>{setCartProducts(result);setCartTotal(total)}}setCategory={(result)=>{setCurrCategory(result);}} products={products}  addToCart={(result,price)=>{setCartProducts(old=>[...old,result]); setCartTotal(cartTotal+price)}}   updateCart={(id,price)=>{ console.log(id); cart.splice(id,1); setCartTotal(cartTotal-price); router.push('/cart')  }} cartProducts={cart} cartTotal={cartTotal} /> 
   </div>
   )
 }

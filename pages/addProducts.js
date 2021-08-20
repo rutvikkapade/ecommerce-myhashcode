@@ -13,7 +13,7 @@ headers: {
 
 return(
 <div>
-<ProductForm categories={categories}/>
+<ProductForm categories={categories} />
 </div>
 )
 }
