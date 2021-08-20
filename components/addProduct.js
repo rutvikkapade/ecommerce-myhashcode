@@ -10,10 +10,11 @@ const[productBrand,setProductBrand]=useState('');
 const[productType,setProductType]=useState('');
 const[imageUrl,setImageUrl]=useState('');
 return(
-<div>
-<form className="form-group" onSubmit={(event)=>{
+<center><div className="formHolder" style={{width:"90%",padding:"10px"}}>
+
+<form style={{textAlign:"left"}} onSubmit={async(event)=>{
 event.preventDefault();
-fetch('https://ecommerce-myhashcode-server.herokuapp.com/sendData',{
+const resp=await fetch('https://ecommerce-myhashcode-server.herokuapp.com/sendData',{
 method : 'post',
  mode : 'cors',
  headers : {
@@ -29,16 +30,26 @@ method : 'post',
     })
 })
 }} >
-<label>Product Name : <input name="productName" id="product-name" className="form-control" onChange={(event)=>{setProductName(event.target.value)} } type="text"/></label>
-<br/>
-<label>Product Price : <input name="productPrice" id="product-price" onChange={(event)=>{setProductPrice(event.target.value)} } type="text"/></label>
-<br/>
-<label>Brand : <input name="productBrand" id="product-brand" onChange={(event)=>{setProductBrand(event.target.value)} } type="text"/></label>
-<br/>
-<label>Image Url : <input name="imageUrl" id="image-url" onChange={(event)=>{setImageUrl(event.target.value)}} type="text"/></label>
-<br/>
-<label>Category :
-<select id="product-category" name="categories" onChange={
+<div className="form-group">
+    <label for="product-name">Product Name : </label>
+    <input type="text" className="form-control" id="product-name" onChange={(event)=>{setProductName(event.target.value)} } aria-describedby="productHelp" placeholder="Enter Product Name"/>
+    <small id="productHelp" class="form-text text-muted">Remember You can add same products multiple time as a seller,no primary key on product name.</small>
+  </div>
+<div className="form-group">
+<label for="product-price">Product Price :</label>
+<input name="productPrice" className="form-control" id="product-price" placeholder="Enter Product Price" onChange={(event)=>{setProductPrice(event.target.value)} } type="text"/>
+</div>
+<div className="form-group">
+<label for="product-brand">Brand :</label>
+<input placeholder="Enter Brand Name"  className="form-control" name="productBrand" id="product-brand" onChange={(event)=>{setProductBrand(event.target.value)} } type="text"/>
+</div>
+<div className="form-group">
+<label for="image-url">Image Url : </label>
+<input placeholder="Enter Image URL" className="form-control" name="imageUrl" id="image-url" onChange={(event)=>{setImageUrl(event.target.value)}} type="text"/>
+</div>
+<div className="form-group">
+<label for="product-category">Category :</label>
+<select className="form-control" id="product-category" name="categories" onChange={
 async(event)=>{
 setCurrCategory(event.target.value);
 const result=await fetch('https://ecommerce-myhashcode-server.herokuapp.com/getProductType',{
@@ -58,10 +69,10 @@ setProductTypes(data);
 <option key={key.category_id} value={key.category_name}>{key.category_name}</option>
 )}
 </select>
-</label>
-<br/>
-<label>Product Type :
-<select name="productType" id="product-type" onChange={(event)=>{
+</div>
+<div className="form-group">
+<label for="product-type">Product Type :</label>
+<select name="productType" className="form-control" id="product-type" onChange={(event)=>{
 setProductType(event.target.value);
 }}>
 <option value={null}  key="899">Select Product Type</option>
@@ -71,11 +82,12 @@ productTypes.map(key=>
 )
 }
 </select>
-</label>
-<br/>
-<input type="submit"/>
-</form>
 </div>
+<br/>
+<input  className="btn btn-primary" value="Add Product" type="submit"/>
+</form>
+
+</div></center>
 )
 }
 
