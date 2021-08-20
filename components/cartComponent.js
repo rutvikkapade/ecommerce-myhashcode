@@ -20,7 +20,6 @@ function Nothing(){
 }
 function cartProduct(key,index,removeProduct){
   var keyid= generateHash(14);
-  
 return(  
 
   <center key={keyid+generateHash(8)}><div key={keyid+generateHash(8)} className="mainContainer">
@@ -38,13 +37,13 @@ return(
        </div>
        <div key={keyid+generateHash(8)} className="two">
            <div key={keyid+generateHash(8)} className="priceHolder">
-           <label>Rs<h3 key={keyid+generateHash(8)} id="productPrice" className="productPrice">{key.product_price}</h3></label>
+           <label>Rs<h3 key={keyid+generateHash(8)} id={"productPrice"+index} className="productPrice">{key.product_price}</h3></label>
            </div>
-           <div key={keyid+generateHash(8)} className="removeHolder" value={key.product_price} id={index} onClick={(event)=>{
-                removeProduct(event.target.id,parseInt(document.getElementById('productPrice').innerHTML));
+           <div key={keyid+generateHash(8)} className="removeHolder" value={key.product_price}>
+                <button key={keyid+generateHash(8)} id={index} className="removeProduct btn btn-outline-danger" onClick={(event)=>{
+                removeProduct(event.target.id,parseInt(document.getElementById('productPrice'+event.target.id).innerHTML));
                 
-           }}>
-                <button key={keyid+generateHash(8)} className="removeProduct btn btn-outline-danger">Remove Product</button>
+           }}>Remove Product</button>
            </div>
        </div>
    </div></center>
@@ -66,7 +65,7 @@ return(<div>
         props.cartProducts.length==0?<CartIsEmpty/>:<Nothing/>
     }
    <div  className="cart-popup">
-    {props.cartProducts.map(key=>cartProduct(key,index,removeProduct))}
+    {props.cartProducts.map(key=>cartProduct(key,index++,removeProduct))}
    
     
    </div>
