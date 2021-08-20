@@ -3,7 +3,7 @@ import {useEffect,useState} from 'react';
 export default function AddProductScreen(){
 const[categories,setCategories]=useState([]);
 useEffect(()=>{
-fetch('http://localhost:3500/getCategories',{
+fetch('https://ecommerce-myhashcode-server.herokuapp.com/getCategories',{
 headers: {
  'Content-Type': 'application/json',
         'Accept': 'application/json'

@@ -10,10 +10,7 @@ import Spacer from '../components/spacer'
 import Link from 'next/link'
 import router from 'next/router'
 import Script from 'next/script'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'jquery/dist/jquery.min.js';
-import 'bootstrap/dist/js/bootstrap.min.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 function MyApp({ Component, pageProps }) {
 const[categories,setCategories]=useState([]);
 const[currCategory,setCurrCategory]=useState('All');
@@ -23,9 +20,10 @@ const[cartTotal,setCartTotal]=useState(0);
 const[productAdded,setProductAdded]=useState(0);
 
 useEffect(()=>{
-fetch('http://localhost:3500/getCategories').then(res=>res.json()).then((result)=>{setCategories(result);} );
 
-fetch('http://localhost:3500/getProducts',{
+fetch('https://ecommerce-myhashcode-server.herokuapp.com/getCategories').then(res=>res.json()).then((result)=>{setCategories(result);} );
+
+fetch('https://ecommerce-myhashcode-server.herokuapp.com/getProducts',{
 mode : 'cors',
 method : 'post',
 headers  : {

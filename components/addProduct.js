@@ -13,7 +13,7 @@ return(
 <div>
 <form className="form-group" onSubmit={(event)=>{
 event.preventDefault();
-fetch('http://localhost:3500/sendData',{
+fetch('https://ecommerce-myhashcode-server.herokuapp.com/sendData',{
 method : 'post',
  mode : 'cors',
  headers : {
@@ -41,7 +41,7 @@ method : 'post',
 <select id="product-category" name="categories" onChange={
 async(event)=>{
 setCurrCategory(event.target.value);
-const result=await fetch('http://localhost:3500/getProductType',{
+const result=await fetch('https://ecommerce-myhashcode-server.herokuapp.com/getProductType',{
          method : 'post',
          mode : 'cors',
          headers : {
