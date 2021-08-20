@@ -43,6 +43,7 @@ return(
                     product_price : key.price,
                     product_rating : key.rating,
                 }
+                alert(product_name+' added to cart ');
               props.addToCart(productObj,parseInt(key.price));
 
             } } >Add to Cart</button></center>
