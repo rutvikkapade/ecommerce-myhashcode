@@ -11,7 +11,7 @@ import Link from 'next/link'
 import router from 'next/router'
 import Script from 'next/script'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import '../styles/carousel.css'
 
 function MyApp({ Component, pageProps }) {
 const[categories,setCategories]=useState([]);
