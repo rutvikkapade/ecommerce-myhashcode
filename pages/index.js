@@ -8,9 +8,7 @@ export default function Home() {
   return (
     <div>
       <Carousel/>
-     <Link href="/addProducts">
-     <a>Add Products</a>
-     </Link>
+      
     </div>
   )
 }

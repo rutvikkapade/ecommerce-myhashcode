@@ -1,5 +1,10 @@
+import { auto } from "@popperjs/core";
+
 export default function Carousel(props){
     return(
-        <img className="d-block w-100"  src="https://codeforces.com/predownloaded/9d/34/9d345d4d7b74d9d12a23de5813a4a8daa9e110d5.png" alt="First slide"/>
+      <div  style={{width : '100%',height : "300px",backgroundColor:'#1FA3F4',textAlign:'center'}}>
+             <img style={{width : 'auto' ,height:'300px' }} src="https://storiesflistgv2.azureedge.net/stories/2018/10/BBDTipSheet_mainbanner.jpg" alt="First slide"/>
+        </div>
+       
     )
 }
