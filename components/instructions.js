@@ -5,13 +5,13 @@ const router=useRouter();
     return(
     <div className="instructionsHolder">
         <Link href="/addProducts">
-        <button  type="button" class="btn btn-outline-primary">Populate The Store with Products</button>
+        <button  type="button" className="btn btn-outline-primary">Populate The Store with Products</button>
         </Link>
         <br/>
         <br/>
         <div>
         <Link href='/products'>
-        <button type="button" class="btn btn-outline-dark" onClick={(event)=>{
+        <button type="button" className="btn btn-outline-dark" onClick={(event)=>{
                 props.setCategory('All');
                 router.push('/products');
           } }>View All Products Listed on App</button>
