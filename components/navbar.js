@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 import Script from 'next/script'
-
+import $ from 'jquery'
 export default function Navbar(props){
 const router=useRouter();
 return(
@@ -21,12 +21,20 @@ return(
     <ul className="navbar-nav">
       <li className="nav-item active">
       <Link href="/">
-        <a className="nav-link" >Home</a>
+        <a className="nav-link" onClick={()=>{
+          $('.navbar-nav>li>a').on('click', function(){
+            $('.navbar-collapse').collapse('hide');
+        });
+        }} >Home</a>
        </Link>
       </li>
       <li className="nav-item" >
       <Link href="/addProducts">
-      <a className="nav-link">Add Product</a>
+      <a onClick={()=>{
+        $('.navbar-nav>li>a').on('click', function(){
+            $('.navbar-collapse').collapse('hide');
+        });
+      }} className="nav-link">Add Product</a>
       </Link>
       </li>
 

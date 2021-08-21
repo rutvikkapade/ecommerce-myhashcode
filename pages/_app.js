@@ -13,6 +13,7 @@ import Script from 'next/script'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/carousel.css'
 import '../styles/instructions.css'
+import $ from 'jquery'
 
 function MyApp({ Component, pageProps }) {
 const[categories,setCategories]=useState([]);
